@@ -16,6 +16,7 @@
 //     }
 // })
 
+
 //secon hw
 const block2 = document.querySelector('.block2');
 
