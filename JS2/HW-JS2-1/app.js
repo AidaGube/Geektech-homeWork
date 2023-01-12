@@ -1,13 +1,3 @@
-/**
- * 
- * 1) Используя регулярные выражения необходимо сделать 
- * поле для ввода российского номера как на уроке. 
-
-2) используя рекурсию необходимо заставить блок двигаться по странице. 
-Создайте один большой блок и один маленький внутри него. 
-Задайте большому блоку position: relative, а малому absolute. 
-И изменяйте параметр позиции малого блока (.style.left=${переменная}px).  
- */
 // first hw
 // const inputPhone = document.querySelector('#phoneInput')
 // const checkPhone = document.querySelector('#phoneCheck')
@@ -27,19 +17,18 @@
 // })
 
 //secon hw
-const block1 = document.querySelector('.block1')
-const block2 = document.querySelector('.block2')
-block1.style.position = 'relative'
-block2.style.position = 'absolute'
-block2.style.left = '100px'
-function moveRight() {
-    let left = block2.style.left;
-    if (left != '') {
-        left = parseInt(left)
-    } else {
-        left = 100
+const block2 = document.querySelector('.block2');
+
+block2.addEventListener('click', function myMove() {
+    let position = 0;
+    let id = setInterval(repeat, 25);
+    function repeat() {
+        if (position >= 450) {
+            clearInterval(id);
+        } else {
+            position++;
+            block2.style.left = position + 'px';
+            block2.style.right = position + 'px';
+        }
     }
-    left += 50
-    block2.style.left = left + 'px'
-}
-block2.addEventListener('click', moveRight, false)
+})
