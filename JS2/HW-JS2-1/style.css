@@ -1,17 +1,54 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .block1 {
   width: 500px;
   height: 500px;
   background: black;
   position: relative;
+  cursor: pointer;
 }
 .block2 {
   position: absolute;
   width: 50px;
   height: 50px;
   background: rgb(255, 242, 0);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#phoneInput {
+  border-radius: 5px;
+  width: 350px;
+  height: 45px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #000000;
+  font-weight: 500;
+}
+#phoneInput:focus {
+  outline: none;
+  border-color: #19a68c;
+}
+#phoneCheck {
+  width: 100px;
+  height: 50px;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 16px;
+  background: #19a68c;
+  margin-left: 20px;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.label{
+  font-size: 20px;
+  color: #19a68c;
+  margin-right: 20px;
+}
+.phoneResult{
+  font-size: 20px;
+  margin-left: 20px;
 }
