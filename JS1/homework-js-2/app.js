@@ -4,6 +4,7 @@
 русском языке. Программа должна работать ,
  если  написано и так Monday, и так monday */
 
+ 
 let langWeek = 'sunday';
 switch (langWeek) {
     case 'Monday':
