@@ -1,0 +1,23 @@
+body {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+h1,
+h2,
+i {
+  text-align: center;
+  color: blue;
+}
+.b__colorred {
+  color: rgb(255, 0, 0);
+}
+p {
+  font-family: sans-serif;
+  width: 500px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 40px;
+  text-indent: 30px;
+  text-align: justify;
+}

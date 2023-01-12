@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block1 {
+  width: 500px;
+  height: 500px;
+  background: black;
+  /* position: absolute; */
+}
+.block2 {
+  /* position: relative; */
+  width: 150px;
+  height: 150px;
+  background: rgb(255, 242, 0);
+}
