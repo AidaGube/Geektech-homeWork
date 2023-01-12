@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>hw-7-2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculators">
+        <input class="typeNumber1" type="number" placeholder="0" />
+
+        <div class="iconBtn">
+          <button class="sumBtn" onclick="decided='+'">+</button>
+          <button class="minBtn" onclick="decided='-'">-</button>
+          <button class="multiBtn" onclick="decided='*'">*</button>
+        </div>
+
+        <input class="typeNumber2" type="number" placeholder="0" />
+
+        <button class="addBtn">decide</button>
+      </div>
+      <div class="solutions" id="result"></div>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
