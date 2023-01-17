@@ -1,13 +1,78 @@
 .block {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    border: 1px solid;
-  }
-  .box{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border: 1px solid;
-    background-color: rgb(255, 0, 0);
-  }
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 1px solid;
+}
+.box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid;
+  background-color: rgb(255, 0, 0);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1px;
+  margin: 0 15px 15px 0;
+  outline: none;
+  border: 1px solid #553c9a;
+  border-radius: 25px;
+  height: 46px;
+  line-height: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+button span {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 25px;
+  height: 42px;
+  line-height: 38px;
+  border: 1px solid #553c9a;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #ffffff;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #553c9a;
+  text-align: center;
+  font-weight: 600;
+}
+button:hover span {
+  background-color: #9b7abc;
+}
+button:active span {
+  background-color: #b393d3 !important;
+}
+button:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

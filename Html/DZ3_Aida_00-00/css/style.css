@@ -1,13 +1,12 @@
 * {
+  margin: 0 auto;
   box-sizing: border-box;
 }
-body {
-  margin: 0 auto;
-}
+
 .hero {
   position: relative;
-  /* width: 100%; */
   background-size: cover;
+  background-color: #F6BED9;
   height: 100vh;
   background-image: url("/images/image-1.jpg");
 }
