@@ -14,8 +14,8 @@ for (i = 0; i < incBtn.length; i++) {
     incBtn[i].addEventListener('click', function () {
         input.value = +input.value + 1
     })
-
     decBtn[i].addEventListener('click', function () {
-        input.value = (input.value > 1) ? (input.value - 1) : (input.value - 1);
+        input.value = (input.value > 1) ? (input.value - 1) : (input.value = 0);
     })
+    
 }
