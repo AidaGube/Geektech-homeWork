@@ -1,0 +1,267 @@
+.menu {
+  height: 60px;
+  background-color: #5757e1;
+}
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 60px);
+  background-color: #F6BED9;
+  background-image: url("../images/image-home.jpg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.home__inner {
+  width: 470px;
+}
+.home__inner form {
+  width: 455px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+}
+.home__inner form input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 268px;
+          flex: 0 0 268px;
+  height: 45px;
+  border: 1px solid #6F2CFF;
+  border-radius: 27.5px 0 0 27.5px;
+  padding-left: 26px;
+  padding-right: 26px;
+  border-right: none;
+  outline: none;
+}
+.home__inner form button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 187px;
+          flex: 0 1 187px;
+  background: #6F2CFF;
+  border-radius: 0 27.5px 27.5px 0;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+.home__inner form button:hover {
+  background: #814df5;
+}
+.home__inner > span {
+  font-size: 15px;
+  line-height: 21px;
+}
+.home__inner h1 {
+  margin-top: 20px;
+  margin-bottom: 34px;
+  font-size: 54px;
+  line-height: 61px;
+}
+.home__inner h1 strong {
+  color: #6F2DFF;
+}
+.home__inner p {
+  font-size: 18px;
+  line-height: 30px;
+}
+.home__inner p strong {
+  font-weight: 900;
+}
+
+.brands {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.brands h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #1C1C1C;
+}
+.brands__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.brands a {
+  color: #1C1C1C;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.easy {
+  padding-top: 68px;
+  padding-bottom: 76px;
+  background-color: #F5F5F5;
+}
+
+.qubit__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+}
+.qubit__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 320px;
+          flex: 0 1 320px;
+  text-align: center;
+}
+.qubit__item h5 {
+  margin-top: 42px;
+  margin-bottom: 16px;
+  font-size: 19px;
+  line-height: 23px;
+}
+.qubit__item p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.can h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 60px 0 12px;
+}
+.can p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.can__item {
+  background: #17002E;
+  width: 460px;
+  height: 200px;
+  padding: 30px 30px 25px;
+  border-radius: 8px 10px 10px 8px;
+}
+.can__item .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.can__item .logo h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: white;
+  margin-left: 20px;
+}
+.can__item p {
+  font-size: 15px;
+  line-height: 22px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 9px 0px 8px;
+  height: 44px;
+}
+.can__item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  position: relative;
+}
+.can__item a:after {
+  content: "";
+  position: absolute;
+  background: white;
+  height: 15%;
+  left: 0;
+  width: 109%;
+  top: 25px;
+}
+.can__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 0 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.parent {
+  width: 1000px;
+  margin: 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.parent.child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  height: 60px;
+  background-color: #3170a8;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/*.parent div:nth-child(1) */
+/*.parent div:nth-of-type(1) */
+/*.parent div:first-child */
+/*.parent div:first-of-type */
+/*.parent div:last-child */
+/*.parent div:last-of-type */
+/*.parent div:nth-child(even) */
+/*.parent div:nth-child(odd) */
+.parent div:nth-child(3n) {
+  background-color: red;
+}

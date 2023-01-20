@@ -1,0 +1,197 @@
+.menu
+    height: 60px
+    background-color: #5757e1
+
+.home
+    display: flex
+    align-items: center
+    height: calc(100vh - 60px)
+    background-color: #F6BED9
+    background-image: url('../images/image-home.jpg')
+    background-position: right center
+    background-repeat: no-repeat
+    background-size: contain
+    &__inner
+        width: 470px
+        form
+            width: 455px
+            display: flex
+            margin-top: 25px
+            input
+                flex: 0 0 268px
+                height: 45px
+                border: 1px solid #6F2CFF
+                border-radius: 27.5px 0 0 27.5px
+                padding-left: 26px
+                padding-right: 26px
+                border-right: none
+                outline: none
+            button
+                flex: 0 1 187px
+                background: #6F2CFF
+                border-radius: 0 27.5px 27.5px 0
+                color: #ffffff
+                border: none
+                cursor: pointer
+                transition: 200ms
+                &:hover
+                    background: #814df5
+
+        & > span
+            font-size: 15px
+            line-height: 21px
+        h1
+            margin-top: 20px
+            margin-bottom: 34px
+            font-size: 54px
+            line-height: 61px
+            strong
+                color: #6F2DFF
+        p
+            font-size: 18px
+            line-height: 30px
+            strong
+                font-weight: 900
+
+.brands
+    padding-top: 30px
+    padding-bottom: 30px
+    text-align: center
+
+    h4
+        margin-bottom: 10px
+        font-size: 18px
+        line-height: 30px
+        color: #1C1C1C
+
+    &__images
+        display: flex
+        justify-content: space-between
+        margin-bottom: 10px
+        padding-top: 14px
+        padding-bottom: 14px
+
+    a
+        color: #1C1C1C
+        font-weight: 700
+        font-size: 16px
+        line-height: 24px
+        text-decoration: none
+
+.easy
+    padding-top: 68px
+    padding-bottom: 76px
+    background-color: #F5F5F5
+
+.qubit
+    &__inner
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        gap: 40px
+
+    &__item
+        flex: 0 1 320px
+        text-align: center
+
+        h5
+            margin-top: 42px
+            margin-bottom: 16px
+            font-size: 19px
+            line-height: 23px
+
+        p
+            font-size: 15px
+            line-height: 22px
+
+.can
+    h1
+        font-weight: 700
+        font-size: 40px
+        line-height: 45px
+        text-align: center
+        margin: 60px 0 12px
+
+    p
+        font-weight: 400
+        font-size: 18px
+        line-height: 30px
+        display: flex
+        justify-content: center
+
+    &__item
+        background: #17002E
+        width: 460px
+        height: 200px
+        padding: 30px 30px 25px
+        border-radius: 8px 10px 10px 8px
+        .logo
+            display: flex
+            justify-content: left
+            align-items: center
+
+            h3
+                font-weight: 700
+                font-size: 18px
+                line-height: 25px
+                color: white
+                margin-left: 20px
+        p
+            font-size: 15px
+            line-height: 22px
+            color: white
+            display: flex
+            justify-content: left
+            margin: 9px 0px 8px
+            height: 44px
+
+        a
+            text-decoration: none
+            color: white
+            font-weight: 400
+            font-size: 15px
+            line-height: 15px
+            position: relative
+            &:after
+                content: ''
+                position: absolute
+                background: white
+                height: 15%
+                left: 0
+                width: 109%
+                top: 25px
+
+    &__inner
+        display: flex
+        flex-wrap: wrap
+        gap: 30px
+        padding: 50px 0 60px
+        justify-content: center
+
+.parent
+    width: 1000px
+    margin: 50px auto
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+
+    &.child
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1 1 300px
+        height: 60px
+        background-color: #3170a8
+        color: #ffffff
+        font-weight: 700
+
+/*.parent div:nth-child(1) */
+/*.parent div:nth-of-type(1) */
+/*.parent div:first-child */
+/*.parent div:first-of-type */
+/*.parent div:last-child */
+/*.parent div:last-of-type */
+/*.parent div:nth-child(even) */
+/*.parent div:nth-child(odd) */
+.parent div:nth-child(3n)
+    background-color: red
