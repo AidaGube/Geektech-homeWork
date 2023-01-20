@@ -282,8 +282,19 @@
   font-size: 15px;
   line-height: 15px;
   color: #ffffff;
-  padding: 0px 30px 10px 0px;
-  border-bottom: 2px solid #ffffff;
+  /* padding: 0px 30px 10px 0px; */
+  position: relative;
+  /* margin-bottom: 10px; */
+}
+.can__item span::after {
+  position: absolute;
+  content: "";
+  /* height: 2px; */
+  height: 15%;
+  width: 106%;
+  background: #ffffff;
+  left: 0;
+  top: 29px;
 }
 .can__title {
   display: flex;
