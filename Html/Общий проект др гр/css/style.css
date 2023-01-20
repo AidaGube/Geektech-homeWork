@@ -1,17 +1,50 @@
+.menu {
+  height: 60px;
+  background-color: #7272e1;
+}
 .back {
-  position: relative;
-  height: 100vh;
+  /* position: relative; */
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
   background-color: #f6bed9;
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.back div {
+
+/* .back div {
   position: absolute;
   bottom: 30px;
   left: 30px;
+} */
+.home__inner {
+  width: 470px;
 }
+.home__inner > span {
+  font-size: 15px;
+  line-height: 21px;
+}
+.home__inner h1 {
+  margin-top: 20px;
+  margin-bottom: 34px;
+  font-size: 54px;
+  line-height: 61px;
+}
+.home__inner h1 strong {
+  color: #6f2dff;
+}
+.home__inner p {
+  width: 438px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.home__inner p strong {
+  font-weight: 900;
+}
+
 .easy {
   background-color: #f5f5f5;
   padding: 58px 0px 55px;
@@ -22,9 +55,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;} */
-
 .easy__img {
-  height: 560px;
+  width: 996px;
+  margin: 0px auto 65px;
 }
 .brands {
   padding-top: 30px;
@@ -53,13 +86,9 @@
   border-bottom: 2px solid #6f2cff;
 }
 
-
-
-
-
-
-/* .qubit {
-  padding: 58px 0px 10px;
+.qubit {
+  padding-top: 58px;
+  padding-bottom: 60px;
   text-align: center;
   cursor: pointer;
 }
@@ -97,7 +126,7 @@
   line-height: 15px;
   color: #000000;
   padding-bottom: 18px;
-} */
+}
 /* .trusted {
   background-color: #17002e;
   padding: 60px 0px 65px;
@@ -332,7 +361,7 @@
 .footer__subtitle img {
   padding-bottom: 30px;
 }
-.footer__title{
+.footer__title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
