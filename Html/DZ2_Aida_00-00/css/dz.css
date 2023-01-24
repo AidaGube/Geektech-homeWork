@@ -9,12 +9,12 @@ i {
   text-align: center;
   color: blue;
 }
-.b__colorred {
+b {
   color: rgb(255, 0, 0);
 }
 p {
   font-family: sans-serif;
-  width: 500px;
+  width: 450px;
   margin: 0 auto;
   font-size: 20px;
   line-height: 40px;
