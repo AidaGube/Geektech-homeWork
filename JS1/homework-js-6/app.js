@@ -17,5 +17,12 @@ for (i = 0; i < incBtn.length; i++) {
     decBtn[i].addEventListener('click', function () {
         input.value = (input.value > 1) ? (input.value - 1) : (input.value = 0);
     })
-    
+
 }
+
+const btns = document.querySelectorAll('.btn')
+btns.forEach(item => {
+    item.addEventListener('click', () => {
+        console.log('clicked');
+    })
+})

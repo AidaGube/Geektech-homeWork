@@ -76,3 +76,28 @@ const footerModal = () => {
     }
 }
 window.addEventListener('scroll', footerModal)
+
+const dedline = '2023-02-25'
+function getTimerRemaining(dedline) {
+    const t = new Date(dedline) - new Date(),
+        days = Math.floor((t / (1000 * 60 * 60 * 24))), // опре кол дней
+        hours = Math.floor((t / (1000 * 60 * 60) % 24)), // опре кол часов
+        min = Math.floor(((t / 1000 / 60) % 60)), // опре кол минут
+        sec = Math.floor(((t / 1000) % 60)) // опре кол секунды
+    return {
+        "total": t,
+        "days": days,
+        "hours": hours,
+        "minutes": min,
+        "seconds": sec
+    }
+}
+
+function setClock(element, deadline) {
+    const elem = document.querySelector(element),
+          days = elem.querySelector('#days'),
+          hours = elem.querySelector('#hours'),
+          minutes = elem.querySelector('#minutes'),
+          seconds = elem.querySelector('#seconds')
++
+}
