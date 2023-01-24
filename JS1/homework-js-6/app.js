@@ -5,10 +5,8 @@
 
 const counters = document.querySelectorAll(".counters")
 const decBtn = document.querySelectorAll('.decrement') //-
-const incBtn = document.querySelectorAll('.increment')
+const incBtn = document.querySelectorAll('.increment') //+
 const input = document.querySelector('input')
-
-
 
 for (i = 0; i < incBtn.length; i++) {
     incBtn[i].addEventListener('click', function () {
