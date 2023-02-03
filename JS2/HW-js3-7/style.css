@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 14px "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+body{
+  background-color: #dcdcdc;
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+.menu {
+  background-color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+}
+.menu__logo {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 33px;
+  color: #195a94;
+}
+.menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__item {
+  width: 620px;
+  padding-top: 8px;
+}
+.menu__item ul {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__item li {
+  list-style-type: none;
+}
+.menu__item li a {
+  font-family: "Montserrat";
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 14px;
+}
+.addBtn__color {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  color: #ffffff;
+  padding: 11px 45px;
+  background: #195a94;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  margin-right: 22px;
+}
+
+.topics{
+margin: 45px 0px 68px;
+}
+.topics__title {
+  position: relative;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 56px;
+  color: #121221;
+}
+.topics__title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 18%;
+  background: #195a94;
+  left: 0;
+  bottom: 0;
+}
+.topics__item{
+  margin: 24px 0px 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topic__image{
+  width: 700px;
+  height: 400px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.25%, rgba(0, 0, 0, 0.65) 100%);
+  border-radius: 8px;
+}
+.topics__left {
+  position: relative;
+}
+.topics__left h2 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  color: #F8F8F8;
+  width: 400px;
+  padding: 32px;
+}
+.topics__right {
+  padding-right: 20px;
+}
+.topics__right p{
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 180%;
+  color: #444444;
+  width: 450px;
+  text-indent: 50px;
+  text-align: justify;
+}
+
+.card-latest {
+  margin: 20px 0px 50px;
+}
+.card__t {
+  position: relative;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  color: #121221;
+}
+.card__t::after {
+  position: absolute;
+  content: "";
+  height: 2.5px;
+  width: 18%;
+  background: #195a94;
+  left: 0;
+  bottom: 0;
+}
+.card__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: auto;
+  margin: 24px 0px;
+  cursor: pointer;
+}
+.card__img img{
+  border-radius: 7px 7px 0 0;
+  width: 270px;
+  height: 176px;
+}
+.card__title {
+  width: 270px;
+  height: 300px;
+  margin-top: -10px;
+  background: #aacbf1;
+  border-radius: 0 0 7px 7px;
+  padding: 20px 0px 20px;
+}
+.card__title h3 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #121221;
+  margin: 0px 10px;
+}
+.card__title p {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #444444;
+  margin: 15px 10px;
+}
+
+.card__sports{
+  margin: 20px 0px 98px;
+}
+
+
+.footer {
+  background-color: #195a94;
+  padding: 40px 0px;
+}
+.footer__item {
+  margin-right: 44px;
+}
+.footer__item ul li {
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  width: 120px;
+  padding-bottom: 15px;
+}
+.footer__item ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  width: 300px;
+}
+.footer__item h4 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  padding-bottom: 22px;
+}
+.footer__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

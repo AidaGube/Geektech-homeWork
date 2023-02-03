@@ -18,30 +18,6 @@ const showTabContent = (i = 0) => {
 
 hideTabContent()
 showTabContent()
-
-
-const modal = document.querySelector('.modal')
-const modalTrigger = document.querySelector('.btn_white')
-const closeModalBtn = document.querySelector('.modal__close')
-
-const openModal = () => {
-    modal.classList.add('show')
-    modal.classList.remove('hide')
-    document.body.style.overflow = 'hidden'
-}
-
-const closeModal = () => {
-    modal.classList.add('hide')
-    modal.classList.remove('show')
-    document.body.style.overflow = ''
-}
-
-modalTrigger.addEventListener('click', openModal)
-closeModalBtn.addEventListener('click', closeModal)
-
-modal.onclick = (event) => event.target === modal ? closeModal() : false
-window.onkeydown = (event) => event.code === 'Backspace' ? closeModal() : false
-
 let j = 0
 function sliderAuto() {
     setInterval(() => {
@@ -68,6 +44,28 @@ tabsParent.onclick = (event) => {
 }
 
 
+const modal = document.querySelector('.modal')
+const modalTrigger = document.querySelector('.btn_white')
+const closeModalBtn = document.querySelector('.modal__close')
+
+const openModal = () => {
+    modal.classList.add('show')
+    modal.classList.remove('hide')
+    document.body.style.overflow = 'hidden'
+}
+
+const closeModal = () => {
+    modal.classList.add('hide')
+    modal.classList.remove('show')
+    document.body.style.overflow = ''
+}
+
+modalTrigger.addEventListener('click', openModal)
+closeModalBtn.addEventListener('click', closeModal)
+
+modal.onclick = (event) => event.target === modal ? closeModal() : false
+window.onkeydown = (event) => event.code === 'Backspace' ? closeModal() : false
+
 const footerModal = () => {
     const scroll = document.documentElement
     if (scroll.scrollTop + scroll.clientHeight >= scroll.scrollHeight - 0.8) {
@@ -77,26 +75,4 @@ const footerModal = () => {
 }
 window.addEventListener('scroll', footerModal)
 
-const dedline = '2023-02-25'
-function getTimerRemaining(dedline) {
-    const t = new Date(dedline) - new Date(),
-        days = Math.floor((t / (1000 * 60 * 60 * 24))), // опре кол дней
-        hours = Math.floor((t / (1000 * 60 * 60) % 24)), // опре кол часов
-        min = Math.floor(((t / 1000 / 60) % 60)), // опре кол минут
-        sec = Math.floor(((t / 1000) % 60)) // опре кол секунды
-    return {
-        "total": t,
-        "days": days,
-        "hours": hours,
-        "minutes": min,
-        "seconds": sec
-    }
-}
 
-function setClock(element, deadline) {
-    const elem = document.querySelector(element),
-          days = elem.querySelector('#days'),
-          hours = elem.querySelector('#hours'),
-          minutes = elem.querySelector('#minutes'),
-          seconds = elem.querySelector('#seconds')
-}
