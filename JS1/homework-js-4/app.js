@@ -8,7 +8,7 @@ for (var tag of tags) {
     result[tag]++
   }
 }
-console.log(result)
+// console.log(result)
 
 // // tags.forEach(function(a){
 //   if(result[a] !== undefined) {
@@ -24,23 +24,23 @@ console.log(result)
 // }
 // console.log(result)
 
-// var sorttag = [];
-// for (var arr in result) {
-//   sorttag.push([arr, result[arr]])
-// }
+var sorttag = [];
+for (var arr in result) {
+  sorttag.push([arr, result[arr]])
+}
 
-// sorttag.sort(
-//   function (a, b) {
-//     return b[1] - a[1]
-//   })
+sorttag.sort(
+  function (a, b) {
+    return b[1] - a[1]
+  })
 
 
-// var arr3 = {};
-// for (var i = 0; i < sorttag.length; i++) {
-//   arr3[sorttag[i][0]] = sorttag[i][1]
-// }
-// console.log(arr3);
-// console.log(sorttag);
+var arr3 = {};
+for (var i = 0; i < sorttag.length; i++) {
+  arr3[sorttag[i][0]] = sorttag[i][1]
+}
+console.log(arr3);
+console.log(sorttag);
 
 // console.log(Object.keys(result).sort((a, b) => result[b] - result[a]
 // ))
