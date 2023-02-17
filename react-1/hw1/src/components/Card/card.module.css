@@ -1,0 +1,59 @@
+
+.card-latest {
+    margin: 20px 0px 50px;
+  }
+  .card__block {
+    margin: 24px 0px;
+  }
+  .card__t {
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42px;
+    color: #121221;
+  }
+  .card__t::after {
+    position: absolute;
+    content: "";
+    height: 2.5px;
+    width: 18%;
+    background: #195a94;
+    left: 0;
+    bottom: 0;
+  }
+  .card__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: auto;
+    margin: 24px 0px;
+    cursor: pointer;
+  }
+  .card__title {
+    width: 270px;
+    height: 200px;
+    background: #aacbf1;
+    border-radius: 25%;
+    padding: 20px;
+    text-align: center;
+
+  }
+  .card__title h3 {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #121221;
+  }
+  .card__title p {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #444444;
+    margin: 15px 10px;
+  }
