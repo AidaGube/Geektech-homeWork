@@ -139,10 +139,10 @@
 }
 .howwork__inner img{
   transition: 0.5s;
+  cursor: pointer;
 }
 .howwork__inner img:hover{
   transform: scale(1.2);
-  cursor: pointer;
 }
 
 .online {
@@ -165,6 +165,8 @@
   margin-top: 12px;
   margin-bottom: 18px;
 }
+
+
 .online__inner {
   display: flex;
   justify-content: space-between;
@@ -185,6 +187,7 @@
   margin: 0 auto;
   padding: 24px 0 35px;
 }
+
 .online .item__content {
   display: flex;
   justify-content: space-between;
@@ -203,6 +206,14 @@
   align-items: center;
   gap: 18px;
 }
+
+
+
+
+
+
+
+
 .online .price_block {
   display: flex;
   justify-content: space-between;
