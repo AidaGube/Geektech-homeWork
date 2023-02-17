@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+html {
+  font-size: 14x;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+.container {
+  width: 1152px;
+  margin: 0 auto;
+}
+.wrapper {
+  background-color: #fff;
+}
+.page__title {
+  text-align: center;
+}
+.page__title h2 {
+  font-size: 48px;
+  line-height: 62px;
+  color: #222222;
+}
+.page__title p {
+  font-size: 16px;
+  line-height: 25px;
+  color: #222222;
+}
+.addBtn {
+  display: inline-block;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #086cf9;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: left;
+}

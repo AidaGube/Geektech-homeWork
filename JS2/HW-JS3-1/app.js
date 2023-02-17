@@ -8,24 +8,23 @@
 Большому блоку задайте высоту и ширину в 500px, А маленькому 50px на 50px 
 Нужно чтобы маленький блок подвинулся слева на право внутри большого блока и остановился.
  */
-
 // first hw
-const inputPhone = document.querySelector('#phoneInput')
-const checkPhone = document.querySelector('#phoneCheck')
-const resultPhone = document.querySelector('.phoneResult')
+// const inputPhone = document.querySelector('#phoneInput')
+// const checkPhone = document.querySelector('#phoneCheck')
+// const resultPhone = document.querySelector('.phoneResult')
 
-const phoneRegExp = /^\+7 \d{3} \d{3}-\d{2}-\d{2}$/
+// const phoneRegExp = /^\+7 \d{3} \d{3}-\d{2}-\d{2}$/
 
-checkPhone.addEventListener('click', () => {
-    if (phoneRegExp.test(inputPhone.value)) {
-        resultPhone.innerText = 'Your number is true'
-        resultPhone.style.color = '#19a68c'
-    } else {
-        resultPhone.innerText = 'Your number is false'
-        resultPhone.style.color = 'red'
-    }
-    inputPhone.value = ''
-})
+// checkPhone.addEventListener('click', () => {
+//     if (phoneRegExp.test(inputPhone.value)) {
+//         resultPhone.innerText = 'Your number is true'
+//         resultPhone.style.color = '#19a68c'
+//     } else {
+//         resultPhone.innerText = 'Your number is false'
+//         resultPhone.style.color = 'red'
+//     }
+//     inputPhone.value = ''
+// })
 
 
 //second hw
@@ -45,13 +44,13 @@ checkPhone.addEventListener('click', () => {
 
 
 //второй вариант 2го задания
-// let position = 0
-// function move() {
-//     position++
-//     document.querySelector('.block2').style.left = position + 'px'
-//     if (position >= 450) {
-//         return true
-//     }
-//     setTimeout(move, 20)
-// }
-// document.querySelector('.block2').onclick = move
+let position = 0
+function move() {
+    position++
+    document.querySelector('.block2').style.left = position + 'px'
+    if (position >= 450) {
+        return true
+    }
+    setTimeout(move, 20)
+}
+document.querySelector('.block2').onclick = move
