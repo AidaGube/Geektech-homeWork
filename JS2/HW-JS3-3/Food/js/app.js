@@ -18,6 +18,7 @@ const showTabContent = (i = 0) => {
 
 hideTabContent()
 showTabContent()
+
 let j = 0
 function sliderAuto() {
     setInterval(() => {
@@ -37,7 +38,7 @@ tabsParent.onclick = (event) => {
             if (event.target === item) {
                 hideTabContent()
                 showTabContent(i)
-                j = i
+                // j = i //* я добавила
             }
         })
     }

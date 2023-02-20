@@ -37,17 +37,15 @@
 // const startBtn = document.querySelector('.start')
 // const stopBtn = document.querySelector('.stop')
 // let timerId;
-//number.innerHTML = 0
+// number.innerHTML = 0
 
-// startBtn.addEventListener('click', function () {
+// startBtn.onclick = function () {
 //     timerId = setInterval(function () {
 //         number.innerHTML++
 //     }, 1000)
-// });
+// }
 
-// stopBtn.addEventListener('click', function () {
+// stopBtn.onclick = function () {
 //     clearInterval(timerId)
-
 //     // number.innerHTML = 0    //если захотим обнулить
-// });
-
+// }

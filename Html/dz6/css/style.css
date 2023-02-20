@@ -141,7 +141,7 @@
   transition: 0.5s;
   cursor: pointer;
 }
-.howwork__inner img:hover{
+.howwork__inner:hover img{
   transform: scale(1.2);
 }
 
@@ -208,15 +208,10 @@
 }
 
 
-
-
-
-
-
-
 .online .price_block {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 18px;
 }
 .online .price-title {
@@ -224,6 +219,7 @@
   font-weight: 700;
   line-height: 32px;
   color: #333333;
+  margin: 0;
 }
 
 .online .price {
@@ -231,6 +227,7 @@
   font-weight: 700;
   line-height: 32px;
   color: #086cf9;
+  margin: 0;
 }
 
 .online .price_text {
