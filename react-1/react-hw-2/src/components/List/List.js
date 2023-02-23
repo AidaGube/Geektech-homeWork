@@ -4,7 +4,7 @@ import classes from './list.module.css';
 const List = ({  handleDone, handleDelete, filterTodo}) => {
   // const listItems = props.links.map((link) => <li key={link.id}>{link.task}</li>)
   return (
-    <div>
+    <>
       <div className={classes.list__list}>
         <div className={classes.list__item}>
           <ul>
@@ -18,7 +18,7 @@ const List = ({  handleDone, handleDelete, filterTodo}) => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

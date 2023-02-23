@@ -1,5 +1,5 @@
-import MiniBtns from '../MiniBtns/MiniBtns'
 import classes from './todoCard.module.css'
+import MiniBtns from '../MiniBtns/MiniBtns'
 
 const TodoCard = ({ todo, handleDone, handleDelete}) => {
   return (

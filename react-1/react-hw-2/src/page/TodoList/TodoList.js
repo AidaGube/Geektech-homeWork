@@ -31,13 +31,21 @@ const TodoList = () => {
 
     const handleAdd = () => {
         setList((prevTodo) => {
-            console.log(prevTodo);
-            return [...prevTodo, { id: list.lenght + 1, title: newtitle, completed: false }]
+            return [...prevTodo , { id: list.length + 1 , title: newtitle, completed: false  }]
         })
         setNewtitle('')
         handleShow()
     }
 
+    const handleDone = (id) => {
+    const currentIndex = list.findIndex((todo) => todo.id === id);
+        list[currentIndex].completed = !list[currentIndex].completed;
+        setList([...list]);
+    }
+
+    const handleDelete = (id) => {
+        setList(list.filter(todo => todo.id !== id))
+    }
 
     const handleNewtitle = (event) => {
         setNewtitle(event.target.value)
@@ -52,42 +60,40 @@ const TodoList = () => {
     })
 
 
-    const handleDone = (id) => {
-        const currentIndex = list.findIndex((todo) => todo.id === id)
-        list[currentIndex].completed = !list[currentIndex].completed
-        setList([...list])
-    }
-
-    const handleDelete = (id) => {
-        setList(list.filter(todo => todo.id != id))
-    }
-
     return (
         <div className={classes.wrapper}>
-            <Button onClick={handleShow}>Добавить</Button>
+            <Button onClick={handleShow}>
+                Добавить
+            </Button>
             <Input
                 placeholder={'Поиск'}
                 onChange={handleSearch}
                 name={'search'}
-                value={search} 
+                value={search}
             />
             <span></span>
-            {
-                state && <Modal handleShow={handleShow}>
-                    <button className={classes.close} onClick={handleShow}>X</button>
-                    <h2>{newtitle}</h2>
-                    <Input
-                        placeholder={'Добавить'}
-                        onChange={handleNewtitle}
-                        name={'add'}
-                        value={newtitle} 
-                    />
-                    {/* <input onChange={(event) => handleSearch(event.target.value)} className={classes.input} type="text" placeholder='search' /> */}
-                    <span></span>
-                    <Button onClick={handleAdd}>Add</Button>
-                </Modal>
+            {state && <Modal handleShow={handleShow}>
+                <button className={classes.close} onClick={handleShow}>X</button>
+                <h2>{newtitle}</h2>
+                <Input
+                    placeholder={'Добавить'}
+                    onChange={handleNewtitle}
+                    name={'add'}
+                    value={newtitle}
+                />
+                {/* <input onChange={(event) => handleSearch(event.target.value)} className={classes.input} type="text" placeholder='search' /> */}
+                <span></span>
+                <Button onClick={handleAdd}>
+                    Add
+                </Button>
+            </Modal>
             }
-            <List filterTodo={filterTodo} list={list} handleDone={handleDone} handleDelete={handleDelete} />
+            <List
+                list={list}
+                handleDone={handleDone}
+                handleDelete={handleDelete}
+                filterTodo={filterTodo}
+            />
         </div>
     )
 
