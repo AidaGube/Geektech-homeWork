@@ -1,0 +1,28 @@
+.todoCard{
+    width: 500px;
+    height: 100px;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 20px rgba(185, 186, 185, 0.75);
+    margin-right: 10px;
+}
+.wrapperCard {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.done{
+    width: 500px;
+    height: 100px;
+    background-color: green;
+    text-decoration: line-through;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 20px rgba(185, 186, 185, 0.75);
+    margin-right: 10px;
+}

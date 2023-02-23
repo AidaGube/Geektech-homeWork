@@ -1,0 +1,30 @@
+.miniBtn {
+  text-decoration: none;
+  color: #6b5770;
+  background-image: linear-gradient(21deg, #ff5410, #eac41b);
+  display: inline-block;
+  padding: 14px 30px;
+  border: 1px solid;
+  border-radius: 9999em;
+  box-sizing: border-box;
+  margin: 20px 5px 0px;
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.miniBtn:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+.miniBtn:hover:after {
+  background: linear-gradient(21deg, #ff5410, #eac41b);
+}
+.miniBtn:active:after {
+  background: linear-gradient(21deg, #ff5410, #eac41b);
+}
+.miniBtn:focus-visible {
+  box-shadow: 0 0 0 3px #fd7f34;
+}
+.miniBtn:disabled {
+  pointer-events: none;
+}

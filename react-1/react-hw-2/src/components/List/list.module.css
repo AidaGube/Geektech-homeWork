@@ -1,8 +1,8 @@
-  .list__list {
+.list__list {
     display: flex;
     align-items: center;
-  }
-  .list__item ul{
+  } 
+   .list__item ul{
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -16,5 +16,5 @@
     font-size: 18px;
     line-height: 14px;
     /* list-style-type: none; */
-    margin-bottom: 20px;
-  }
+     margin-bottom: 20px;
+  } 

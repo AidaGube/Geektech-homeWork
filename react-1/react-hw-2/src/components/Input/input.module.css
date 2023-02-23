@@ -5,6 +5,7 @@
   display: inline-block;
   border-radius: 9999em;
   border: 2px solid #10abff;
+  margin-top: 40px;
 }
 
 .input:focus + span {
