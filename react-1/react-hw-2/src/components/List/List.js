@@ -2,7 +2,6 @@ import TodoCard from '../TodoCard/TodoCard';
 import classes from './list.module.css';
 
 const List = ({  handleDone, handleDelete, filterTodo}) => {
-
   // const listItems = props.links.map((link) => <li key={link.id}>{link.task}</li>)
   return (
     <div>
