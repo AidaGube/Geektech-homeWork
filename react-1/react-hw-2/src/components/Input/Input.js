@@ -4,7 +4,6 @@ const Input = ({ placeholder, onChange, value, name }) => {
 
   return (
     <div>
-      {/* <input onChange={(event) => handleNewTask(event.target.value)} className={classes.input} type='text' placeholder='add' /> */}
       <input
         className={classes.input}
         type="text"

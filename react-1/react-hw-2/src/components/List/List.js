@@ -1,20 +1,30 @@
 import TodoCard from '../TodoCard/TodoCard';
 import classes from './list.module.css';
 
-const List = ({  handleDone, handleDelete, filterTodo}) => {
-  // const listItems = props.links.map((link) => <li key={link.id}>{link.task}</li>)
+const List = ({ 
+  list,
+  handleDone,
+  handleDelete,
+  currentEdit,
+  handleChangeCarrent,
+  handleEdit,
+  handleCancel
+}) => {
   return (
     <>
       <div className={classes.list__list}>
         <div className={classes.list__item}>
           <ul>
-            {filterTodo.map((todo) => <TodoCard
+            {list.map(todo => <TodoCard
               key={todo.id}
               todo={todo}
               handleDone={handleDone}
               handleDelete={handleDelete}
+              currentEdit={todo.id === currentEdit}
+              handleChangeCarrent={handleChangeCarrent}
+              handleEdit={handleEdit}
+              handleCancel={handleCancel}
             />)}
-            {/* {listItems} */}
           </ul>
         </div>
       </div>

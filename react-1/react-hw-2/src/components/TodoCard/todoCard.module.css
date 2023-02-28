@@ -1,28 +1,63 @@
-.todoCard{
-    width: 500px;
-    height: 100px;
-    background-color: #fff;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 4px 4px 20px rgba(185, 186, 185, 0.75);
-    margin-right: 10px;
+.todoCard {
+  width: 700px;
+  height: 100px;
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 20px rgba(185, 186, 185, 0.75);
+  margin-right: 10px;
+  position: relative;
 }
 .wrapperCard {
- display: flex;
- justify-content: space-between;
- align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.done{
-    width: 500px;
-    height: 100px;
-    background-color: green;
-    text-decoration: line-through;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 4px 4px 20px rgba(185, 186, 185, 0.75);
-    margin-right: 10px;
+.done {
+  background-color: green;
+  text-decoration: line-through;
+}
+.actionButtons {
+  position: absolute;
+  right: 9px;
+}
+.editIcon {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+}
+.wrapperEdit{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.editSave {
+  text-decoration: none;
+  color: #6b5770;
+  background-image: linear-gradient(21deg, #10ff60, #00943b);
+  display: inline-block;
+  padding: 9px 20px;
+  border: 1px solid;
+  border-radius: 9999em;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  margin: 0px 0px 6px 15px;
+}
+.cancel{
+  text-decoration: none;
+  color: #6b5770;
+  background-image: linear-gradient(21deg, #d8d8d8, #888989);
+  display: inline-block;
+  padding: 9px 20px;
+  border: 1px solid;
+  border-radius: 9999em;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  margin: 0px 0px 6px 15px;
 }
