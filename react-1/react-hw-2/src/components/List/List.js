@@ -9,7 +9,6 @@ const List = ({
   handleChangeCarrent,
   handleEdit,
   handleCancel,
-  selectRes
 }) => {
   return (
     <>
@@ -25,7 +24,6 @@ const List = ({
               handleChangeCarrent={handleChangeCarrent}
               handleEdit={handleEdit}
               handleCancel={handleCancel}
-              selectRes={selectRes}
             />)}
           </ul>
         </div>

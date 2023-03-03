@@ -37,11 +37,6 @@ const TodoList = () => {
     const handleNewtitle = (event) => {
         setNewtitle(event.target.value)
     }
-    /// variable for search result;
-    const handleSearch = (event) => {
-        setSearch(event.target.value)
-    }
-    const resultSearch = list.filter(todo => todo.title.toLowerCase().includes(search.toLowerCase()))
 
     // edit todo with id and new Text;
     const handleEdit = (editTodo) => {
@@ -59,33 +54,6 @@ const TodoList = () => {
         console.log(cancelTodo);
         setCurrentEdit()
     }
-
-    // const [select, setSelect] = useState('');
-
-    // const options = [
-    //     { value: 'Boolean', label: 'Все таски' },
-    //     { value: 'true', label: 'Выполненные' },
-    //     { value: 'false', label: 'Не выполненные' },
-    // ]
-
-    // const handleSelect = (value) => {
-    //     setSelect(value);
-    // }
-
-    // useEffect(() => {
-    //     const selectRes = list.filter(item => {
-    //         if (select === 'true') {
-    //             return item.completed === true
-    //         } else if (select === 'false') {
-    //             return item.completed === false
-    //         } else {
-    //             return item
-    //         }
-    //     })
-    //     setList([...selectRes])
-    // }, [select, list])
-
-
 
     // массив зависимости ессли то что лежит [] если не стоит то при каждом обновление реакта он будет отображаться
     // nj jy dct dblbn rfr rjvgytyn ljk;ty xnj-nj j,yjdbnm dspsdf.n aeyrwb. rjnjhfz kt;bn dyenhb 
@@ -120,42 +88,61 @@ const TodoList = () => {
         localStorage.clear()
     }
 
-    const [select, setSelect] = useState('');
-
     const options = [
         { value: 'all', label: 'Все таски' },
         { value: 'true', label: 'Выполненные' },
         { value: 'false', label: 'Не выполненные' },
     ]
 
+    // const handleSelect = (event) => {
+    //     const selecting = event.value
+    //     if (selecting === 'all') {
+    //         setList([...list])
+    //     } else {
+    //         const selectRes = list.filter(item => {
+    //             if (selecting === 'true') {
+    //                 return item.completed === true
+    //             } else if (selecting === 'false') {
+    //                 return item.completed === false
+    //             }
+    //         })
+    //         setList([...selectRes])
+    //     }
+    //     setSelect(selecting);
+    // }
+
+
+    /// variable for search result;
+    const handleSearch = (event) => {
+        setSearch(event.target.value)
+    }
+    const resultSearch = list.filter(todo => todo.title.toLowerCase().includes(search.toLowerCase()))
+
+    // for filtering task select
+    const [select, setSelect] = useState("all");
     const handleSelect = (event) => {
-        const selecting = event.value
-
-        const selectRes = list.filter(item => {
-            if (selecting === 'true') {
-                return item.completed === true
-            } else if (selecting === 'false') {
-                return item.completed === false
-            } else {
-                return item
-            }
-        })
-
-        setList([...selectRes])
-        setSelect()
+        setSelect(event.value)
     }
 
+    let resultFilter
+    if (select === 'all') {
+        resultFilter = resultSearch
+    } else if (select === 'true') {
+        resultFilter = list.filter(todo => todo.completed === true)
+    } else if (select === 'false') {
+        resultFilter = list.filter(todo => todo.completed === false)
+    } else {
+        resultFilter = null
+    }
 
     return (
         <div className={classes.wrapper}>
-
             <Select
                 options={options}
                 className='select'
                 onChange={handleSelect}
-                value={select}
+                defaultValue="all"
             />
-
             <Button onClick={handleShow}>
                 Добавить
             </Button>
@@ -187,7 +174,7 @@ const TodoList = () => {
             </Modal>
             }
             <List
-                list={resultSearch}
+                list={resultFilter}
                 handleChangeCarrent={setCurrentEdit}
                 handleDone={handleDone}
                 handleDelete={handleDelete}
