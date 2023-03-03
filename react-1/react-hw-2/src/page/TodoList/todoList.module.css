@@ -1,10 +1,11 @@
 .wrapper {
-  width: 100vw;
+  /* width: 100vw; */
   /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .input {
@@ -44,4 +45,32 @@ span {
 }
 .title {
   display: block;
+}
+.inp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  text-decoration: none;
+  color: #6b5770;
+  background-image: linear-gradient(21deg, #d8d8d8, #888989);
+  display: inline-block;
+  padding: 9px 20px;
+  border: 1px solid;
+  border-radius: 9999em;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  margin: 45px 0px 6px 15px;
+}
+.btn:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+.removeIcon{
+  width: 20px;
+  height: 20px;
 }

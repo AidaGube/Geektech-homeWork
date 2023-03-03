@@ -1,47 +1,22 @@
 import { useEffect, useState } from "react"
+import Select from 'react-select';
 import classes from './todoList.module.css'
 import Button from "../../components/Button/Button"
 import Modal from "../../components/Modal/Modal"
 import List from "../../components/List/List"
 import Input from "../../components/Input/Input"
+import removeIcon from '../../assets/9.png'
 
-const getLocalList = () => {
-    let item = localStorage.getItem('items')
-    console.log(item);
-    if (item) {
-        return JSON.parse(localStorage.getItem('items'))
-    } else {
-        return []
-    }
-}
 const TodoList = () => {
     const [state, setState] = useState(false)
     const [newtitle, setNewtitle] = useState('')
     const [search, setSearch] = useState('') // внутри скобок изначальное состояние 
     const [currentEdit, setCurrentEdit] = useState()
-    const [list, setList] = useState(getLocalList() || [
-        {
-            id: 1,
-            title: 'coding',
-            completed: false
-        },
-        {
-            id: 2,
-            title: 'eat',
-            completed: false
-        },
-        {
-            id: 3,
-            title: 'sleep',
-            completed: false
-        }
-    ])
-
-    useEffect(() =>{
-        localStorage.setItem('items', JSON.stringify(list))
-    },[list])
+    // list of Todo
+    const [list, setList] = useState([])
 
     const handleShow = () => setState(!state)
+    // fc for add new todos;
     const handleAdd = () => {
         setList((prevTodo) => {
             return [...prevTodo, { id: list.length + 1, title: newtitle, completed: false }]
@@ -49,22 +24,26 @@ const TodoList = () => {
         setNewtitle('')
         handleShow()
     }
+    // function for change completed of todo;
     const handleDone = (id) => {
         const currentIndex = list.findIndex((todo) => todo.id === id);
         list[currentIndex].completed = !list[currentIndex].completed;
         setList([...list]);
     }
+    // delete todo with id;
     const handleDelete = (id) => {
         setList(list.filter(todo => todo.id !== id))
     }
     const handleNewtitle = (event) => {
         setNewtitle(event.target.value)
     }
+    /// variable for search result;
     const handleSearch = (event) => {
         setSearch(event.target.value)
     }
     const resultSearch = list.filter(todo => todo.title.toLowerCase().includes(search.toLowerCase()))
-   
+
+    // edit todo with id and new Text;
     const handleEdit = (editTodo) => {
         const editList = list.map(todo => {
             if (todo.id === editTodo.id) {
@@ -76,23 +55,122 @@ const TodoList = () => {
         setCurrentEdit()
     }
 
-    const handleCancel = (cancelTodo) =>{
+    const handleCancel = (cancelTodo) => {
         console.log(cancelTodo);
-      setCurrentEdit()
+        setCurrentEdit()
     }
+
+    // const [select, setSelect] = useState('');
+
+    // const options = [
+    //     { value: 'Boolean', label: 'Все таски' },
+    //     { value: 'true', label: 'Выполненные' },
+    //     { value: 'false', label: 'Не выполненные' },
+    // ]
+
+    // const handleSelect = (value) => {
+    //     setSelect(value);
+    // }
+
+    // useEffect(() => {
+    //     const selectRes = list.filter(item => {
+    //         if (select === 'true') {
+    //             return item.completed === true
+    //         } else if (select === 'false') {
+    //             return item.completed === false
+    //         } else {
+    //             return item
+    //         }
+    //     })
+    //     setList([...selectRes])
+    // }, [select, list])
+
+
+
+    // массив зависимости ессли то что лежит [] если не стоит то при каждом обновление реакта он будет отображаться
+    // nj jy dct dblbn rfr rjvgytyn ljk;ty xnj-nj j,yjdbnm dspsdf.n aeyrwb. rjnjhfz kt;bn dyenhb 
+    // изменили зависимость и он рендерит эту переменную 
+    // юзэффект срабатывает при своей зависимости мы меняем одну из зависимостей и эс перевызывает свою колбэк функцию
+    //[] если пустые то он срабатывает один раз он не знает нужно ли вызывать колбек функцию didMount
+    // внутри можно возвращать return => она является unMounting они засоряют память и нужно очищать 
+
+    /// Получаем список из нашего localStorage
+    // сохраняем данные внутри браузера 
+    //который записывает весь список 
+    useEffect(() => {
+        const myLocalList = JSON.parse(localStorage.getItem('todoList'))  // получение списка из хранилище // все списки которы мы сохранили до этого 
+        if (myLocalList?.length !== 0) {  // если он существует то только в этом случае записывай  // проверка на длину массива
+            setList(myLocalList)
+        } // срабатывает один раз при обновлении нашей страницы
+    }, [])// чтобы срабатывал один раз при фазе mounting(didMount);
+
+    //localstorage.clear можно очистbnm
+
+    // Записывает иземенения в localStorage;
+    useEffect(() => {  //отслеживает наши обновления
+        localStorage.setItem('todoList', JSON.stringify(list)) //список с ключом todoList
+        return () => {
+        } //отписываемся от каких то вещей 
+    }, [list]) //тут поставили зависимость он записывается при изменении везде где есть list он обновляет там все прежнии состояния и в это время срабатывает useEffect
+    // если мы меняем наш список то меняй и перезаписывай такой список для нашего локалСторедж
+    // делаем манипуляцию локально но получаем не сразу только после обновления
+
+    const clearTask = () => {
+        setList([])
+        localStorage.clear()
+    }
+
+    const [select, setSelect] = useState('');
+
+    const options = [
+        { value: 'all', label: 'Все таски' },
+        { value: 'true', label: 'Выполненные' },
+        { value: 'false', label: 'Не выполненные' },
+    ]
+
+    const handleSelect = (event) => {
+        const selecting = event.value
+
+        const selectRes = list.filter(item => {
+            if (selecting === 'true') {
+                return item.completed === true
+            } else if (selecting === 'false') {
+                return item.completed === false
+            } else {
+                return item
+            }
+        })
+
+        setList([...selectRes])
+        setSelect()
+    }
+
 
     return (
         <div className={classes.wrapper}>
+
+            <Select
+                options={options}
+                className='select'
+                onChange={handleSelect}
+                value={select}
+            />
+
             <Button onClick={handleShow}>
                 Добавить
             </Button>
-            <Input
-                placeholder={'Поиск'}
-                onChange={handleSearch}
-                name={'search'}
-                value={search}
-            />
-            <span></span>
+            <div className={classes.inp}>
+                <Input
+                    placeholder={'Поиск'}
+                    onChange={handleSearch}
+                    name={'search'}
+                    value={search}
+                />
+                <span></span>
+                <button onClick={clearTask} className={classes.btn}>
+                    <img src={removeIcon} alt='edit' className={classes.removeIcon} />
+                </button>
+            </div>
             {state && <Modal handleShow={handleShow}>
                 <button className={classes.close} onClick={handleShow}>X</button>
                 <h2>{newtitle}</h2>
@@ -119,6 +197,5 @@ const TodoList = () => {
             />
         </div>
     )
-
 }
 export default TodoList
