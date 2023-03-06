@@ -6,12 +6,16 @@ import Modal from "../../components/Modal/Modal"
 import List from "../../components/List/List"
 import Input from "../../components/Input/Input"
 import removeIcon from '../../assets/9.png'
+import Pagination from './../../components/Pagination/Pagination';
+import axios from 'axios';
 
 const TodoList = () => {
+    const baseURL = 'https://jsonplaceholder.typicode.com/todos';
     const [state, setState] = useState(false)
     const [newtitle, setNewtitle] = useState('')
     const [search, setSearch] = useState('') // внутри скобок изначальное состояние 
     const [currentEdit, setCurrentEdit] = useState()
+    const [page, setPage] = useState(1);
     // list of Todo
     const [list, setList] = useState([])
 
@@ -65,21 +69,21 @@ const TodoList = () => {
     /// Получаем список из нашего localStorage
     // сохраняем данные внутри браузера 
     //который записывает весь список 
-    useEffect(() => {
-        const myLocalList = JSON.parse(localStorage.getItem('todoList'))  // получение списка из хранилище // все списки которы мы сохранили до этого 
-        if (myLocalList?.length !== 0) {  // если он существует то только в этом случае записывай  // проверка на длину массива
-            setList(myLocalList)
-        } // срабатывает один раз при обновлении нашей страницы
-    }, [])// чтобы срабатывал один раз при фазе mounting(didMount);
+    // useEffect(() => {
+    //     const myLocalList = JSON.parse(localStorage.getItem('todoList'))  // получение списка из хранилище // все списки которы мы сохранили до этого 
+    //     if (myLocalList?.length !== 0) {  // если он существует то только в этом случае записывай  // проверка на длину массива
+    //         setList(myLocalList)
+    //     } // срабатывает один раз при обновлении нашей страницы
+    // }, [])// чтобы срабатывал один раз при фазе mounting(didMount);
 
-    //localstorage.clear можно очистbnm
+    // //localstorage.clear можно очистbnm
 
-    // Записывает иземенения в localStorage;
-    useEffect(() => {  //отслеживает наши обновления
-        localStorage.setItem('todoList', JSON.stringify(list)) //список с ключом todoList
-        return () => {
-        } //отписываемся от каких то вещей 
-    }, [list]) //тут поставили зависимость он записывается при изменении везде где есть list он обновляет там все прежнии состояния и в это время срабатывает useEffect
+    // // Записывает иземенения в localStorage;
+    // useEffect(() => {  //отслеживает наши обновления
+    //     localStorage.setItem('todoList', JSON.stringify(list)) //список с ключом todoList
+    //     return () => {
+    //     } //отписываемся от каких то вещей 
+    // }, [list]) //тут поставили зависимость он записывается при изменении везде где есть list он обновляет там все прежнии состояния и в это время срабатывает useEffect
     // если мы меняем наш список то меняй и перезаписывай такой список для нашего локалСторедж
     // делаем манипуляцию локально но получаем не сразу только после обновления
 
@@ -93,24 +97,6 @@ const TodoList = () => {
         { value: 'true', label: 'Выполненные' },
         { value: 'false', label: 'Не выполненные' },
     ]
-
-    // const handleSelect = (event) => {
-    //     const selecting = event.value
-    //     if (selecting === 'all') {
-    //         setList([...list])
-    //     } else {
-    //         const selectRes = list.filter(item => {
-    //             if (selecting === 'true') {
-    //                 return item.completed === true
-    //             } else if (selecting === 'false') {
-    //                 return item.completed === false
-    //             }
-    //         })
-    //         setList([...selectRes])
-    //     }
-    //     setSelect(selecting);
-    // }
-
 
     /// variable for search result;
     const handleSearch = (event) => {
@@ -134,6 +120,35 @@ const TodoList = () => {
     } else {
         resultFilter = null
     }
+
+    const handleNext = () => {
+        setPage(prev => prev + 1)
+    }
+    const handlePrev = () => {
+        setPage(prev => prev - 1)
+        if (page === 1) {
+            return
+        }
+    }
+
+    const handleGet = async (page) => {
+        try {
+            const { data } = await axios.get(baseURL, {
+                params: {
+                    _limit: 10,
+                    _page: page
+                }
+            });
+            setList(data);
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+        handleGet(page);
+    }, [page])
 
     return (
         <div className={classes.wrapper}>
@@ -181,6 +196,11 @@ const TodoList = () => {
                 currentEdit={currentEdit}
                 handleEdit={handleEdit}
                 handleCancel={handleCancel}
+            />
+            <Pagination
+                page={page}
+                handleNext={handleNext}
+                handlePrev={handlePrev}
             />
         </div>
     )
