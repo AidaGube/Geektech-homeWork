@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import PokemonCard from './components/PokemonCard/PokemonCard';
+import { fetchPokemons } from "./api/fetchPokemons";
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useState('dark')
+  const [list, setList] = useState([])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+  }
+
+  useEffect(() => {
+    fetchPokemons(setList)
+  }, [])
+  console.log(list);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app ${theme}`}>
+      <PokemonCard />
+      <button onClick={toggleTheme} className="button"> Change theme </button>
     </div>
   );
 }
