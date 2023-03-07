@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import PokemonCard from './components/PokemonCard/PokemonCard';
 import { fetchPokemons } from "./api/fetchPokemons";
+import List from "./components/List/List";
 
 const App = () => {
   const [theme, setTheme] = useState('dark')
@@ -15,10 +15,14 @@ const App = () => {
     fetchPokemons(setList)
   }, [])
   console.log(list);
+  
+  
 
   return (
     <div className={`app ${theme}`}>
-      <PokemonCard />
+      <List
+      list={list}
+      />
       <button onClick={toggleTheme} className="button"> Change theme </button>
     </div>
   );
