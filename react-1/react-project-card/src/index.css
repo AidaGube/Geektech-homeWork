@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 .button {
-  background-color: rgba(248, 89, 31, 0.718);
+  background: var(--card-background);
   color: aliceblue;
   padding: 19px 27px;
   margin: 20px 0px 40px;
