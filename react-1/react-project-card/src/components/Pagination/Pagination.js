@@ -1,27 +1,27 @@
 import React from 'react'
 import './pagination.css';
 
-const Pagination = ({ page, setOffset, totalPosts, offset }) => {
-    let pages = []
-    for (let i = 1; i <= totalPosts / page; i++) {
-        pages.push(i)
-    }
+const Pagination = ({ page, changeOffset }) => {
+    // let pages = []
+    // for (let i = 1; i <= totalPosts / page; i++) {
+    //     pages.push(i)
+    // }
     return (
         <div className='pagination'>
-            {/* <button onClick={() => changeOffset('prev')}>
+            <button className='active' onClick={() => changeOffset('prev')}>
                 Prev
             </button>
             {page}
-            /
-            {pageCount}
-            <button onClick={() => changeOffset('next')}
+            {/* /
+            {pageCount} */}
+            <button className='active' onClick={() => changeOffset('next')}
             >Next
-            </button> */}
-            {
+            </button>
+            {/* {
                 pages.map((pag, index) => {
-                    return <button className={pag === offset ? 'active' : ''} onClick={() => setOffset(pag)} key={index}>{pag}</button>
+                    return <button  onClick={() => setOffset(pag)} key={index}>{pag}</button>
                 })
-            }
+            } */}
         </div>
     )
 }

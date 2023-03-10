@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+    align-items: center;
 }
 .pagination button {
     width: 40px;
@@ -15,12 +16,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
-    color: #eee;
-    border-color: #eee;
+    color: #910000;
+    border-color: #870000;
 }
-.pagination button.active{
+.pagination button.active:hover{
     font-weight: 900;
     border-color: black;
-    background: #ffe400;
+    background: #a50f25ae;
     color: black;
 }
