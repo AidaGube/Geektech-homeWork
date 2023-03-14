@@ -1,21 +1,17 @@
 import React from 'react'
 import { useEffect, useState } from "react";
+import { fetchPokemonS, } from '../../api/fetchPokemons';
+import List from '../../components/List/List';
+import Pagination from '../../components/Pagination/Pagination';
+import './mainPage.css'
 import { fetchPokemons } from './../../api/fetchPokemons';
-import List from './../List/List';
-import Pagination from './../Pagination/Pagination';
-
 
 const MainPage = () => {
-  const [theme, setTheme] = useState('dark')
   const [pokemonList, setPokimonList] = useState([])
   // const [pageCount, setPageCount] = useState(0)
   const [offset, setOffset] = useState(1)
   const [page, setPage] = useState(1)
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-  }
 
   const limit = 12;
   useEffect(() => {
@@ -25,6 +21,10 @@ const MainPage = () => {
     })
   }, [offset])
 
+  // const limit = 1;
+  // useEffect(() =>{
+  //   fetchPokemonS(limit, 24).then(data =>  setPokimonList(data))
+  // })
 
   const handleChangePage = (type) => {
     if (type === 'next') {
@@ -42,24 +42,30 @@ const MainPage = () => {
   // const lastIndex = offset * page
   // const fisrtIndex = lastIndex - offset
   // const currentPost = pokemonList.slice(fisrtIndex, lastIndex)
-
+   
+  const handleSortWeight = () => {
+    fetchPokemonS(12,24, 'weight').then(data => setPokimonList(data))
+  }
+  const handleSortAttack = () => {
+    fetchPokemonS(12,24, 'atttack').then(data2 => setPokimonList(data2))
+  }
 
   return (
-    <div className={`app ${theme}`}>
-      <button onClick={toggleTheme} className="button"> Change theme </button>
-
+    <div >
+     <div className='poke__sort'>
+     <span>Сортировать по: </span>
+     <button onClick={handleSortAttack}>Силе</button>
+      <button onClick={handleSortWeight}>Весу</button>
+     </div>
       <List pokemonList={pokemonList} />
-
       <Pagination
-      // pageCount={pageCount}
-      changeOffset={handleChangePage}
-      // setOffset={setOffset}
-      // totalPosts={pokemonList.length}
-      // offset={offset}
-      page={page}
-   
+        // pageCount={pageCount}
+        changeOffset={handleChangePage}
+        // setOffset={setOffset}
+        // totalPosts={pokemonList.length}
+        // offset={offset}
+        page={page}
       />
-
     </div>
   )
 }

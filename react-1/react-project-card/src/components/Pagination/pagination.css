@@ -16,12 +16,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
-    color: #910000;
-    border-color: #870000;
+    color: rgb(255, 183, 0);
+    border-color: rgb(178, 132, 17);
 }
 .pagination button.active:hover{
     font-weight: 900;
     border-color: black;
-    background: #a50f25ae;
+    background: rgba(234, 255, 0, 0.288);
     color: black;
 }
