@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import List from '../../components/List/List'
 import Modal from './../../components/Modal/Modal';
-import AboutPages from './../AboutPages/AboutPages';
 
 const ListPages = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)

@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom'
 
 const AboutPages = ({list}) => {
   const {id} = useParams()
-  const item = list.find((item) => item.id === parseInt(id));
-  if (!item) {
+  const select = list.find((item) => item.id === parseInt(id));
+  if (!select) {
     return <div>Элемент не найден</div>;
   }
   return (
     <div>
-      <h2>{item.title}</h2>
+      <h2>{select.title}</h2>
     </div>
   )
 }

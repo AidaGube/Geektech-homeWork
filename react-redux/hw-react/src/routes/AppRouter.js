@@ -5,7 +5,7 @@ const AppRouter = () => {
   return (
     //приватные роуты
     <Routes>
-      <Route path='/:id' element={<AboutPages list={list}/>} />
+      <Route path='/:id' element={<AboutPages item={item}/>} />
       <Route path='*' element={<Navigate to={'/'} />} /> //тег который отрабатывает хук как useNavigate если нет такой стр то перекидывает на главную
     </Routes>
   )
