@@ -34,6 +34,7 @@ const AboutPages = () => {
   // }, []);
   return (
     <div>
+      <h2>{item?.id}</h2>
       <h2>{item?.title}</h2>
       <p>
         There laughing then inquietude trees fanny whether resources china chief questions pure narrow wishing.
