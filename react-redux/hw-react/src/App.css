@@ -8,7 +8,7 @@ body {
   background-color: white;
   max-width: 1180px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
 }
 
 .App-logo {

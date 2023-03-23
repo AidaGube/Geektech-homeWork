@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import List from '../../components/List/List'
 import Modal from './../../components/Modal/Modal';
 
@@ -23,12 +23,24 @@ const ListPages = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newList = {
-            id: new Date().getTime(),
+            id: list.length + 1,
             title: titleRef.current.value,
         };
         setList([...list, newList]);
         titleRef.current.value = '';
     }
+
+    // useEffect(() => {
+    //     localStorage.setList('list', JSON.stringify(list))
+    // }, [list])
+  
+    // useEffect(() => {
+    //     const myLocalList = JSON.parse(localStorage.getItem('list'))
+    //     if (myLocalList?.length !== 0) {
+    //         setList(myLocalList)
+    //     }
+    // }, [])
+    
     return (
         <div>
             <button className='listButton' type="button" onClick={() => setIsModalOpen(true)}>

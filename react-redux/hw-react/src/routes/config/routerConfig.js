@@ -18,7 +18,7 @@ export const newRouter = createBrowserRouter([
                 element: <ListPages />
             },
             {
-                path: '/:id',
+                path: '/list/:id',
                 element: <AboutPages />
             },
         ]
