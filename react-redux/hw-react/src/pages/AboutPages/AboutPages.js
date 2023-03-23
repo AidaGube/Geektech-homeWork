@@ -5,7 +5,7 @@ const AboutPages = ({list}) => {
   const {id} = useParams()
   const item = list.find((item) => item.id === parseInt(id));
   if (!item) {
-    return <div>Элемент не найден.</div>;
+    return <div>Элемент не найден</div>;
   }
   return (
     <div>

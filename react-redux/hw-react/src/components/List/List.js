@@ -1,5 +1,4 @@
 import React from 'react'
-import AboutPages from '../../pages/AboutPages/AboutPages';
 import CardList from './../CardList/CardList';
 
 const List = ({ list }) => {
