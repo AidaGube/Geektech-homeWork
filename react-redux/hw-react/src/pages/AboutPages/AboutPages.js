@@ -1,12 +1,18 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const AboutPages = () => {
   const { id } = useParams()
+  // console.log(list);
+  // const selectedItem = list.map((item) => item.id === parseInt(id)
+  // )
+  // if (!selectedItem) {
+  //   return <div>Элемент не найден</div>;
+  // }
   const baseUrl = 'https://jsonplaceholder.typicode.com/todos'
   const getItem = async (id) => {
-    try { 
+    try {
       const { data } = await axios.get(baseUrl + `/${id}`)
       return data
     } catch (error) {
@@ -20,8 +26,12 @@ const AboutPages = () => {
     getItem(id).then(data => {
       setItems(data)
     })
-  }, [id])
+  }, [id]) 
 
+  // const {getNewList, newList} = useContext(appContext)
+  // useEffect(() => {
+  //   getNewList(listId);
+  // }, []);
   return (
     <div>
       <h2>{item?.title}</h2>

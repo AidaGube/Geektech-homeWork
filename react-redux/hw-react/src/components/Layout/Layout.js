@@ -6,8 +6,6 @@ const Layout = () => {
     <div>
       <div className='layot__header'>
         <Link to='/'>Main</Link>
-        <Link to='/list'>List</Link>
-        <Link to='/:id'>About</Link>
       </div>
       <Outlet />
       <div>
