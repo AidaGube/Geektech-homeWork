@@ -1,7 +1,7 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +31,77 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  max-width: 1280px;
+  height: 100vh;
+  padding: 80px;
+}
+.welcome__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-weight: 300;
+  color: wheat;
+  padding-top: 20px;
+}
+
+.form-control {
+  background: transparent;
+  border: none;
+  height: 50px;
+  color: rgba(255, 255, 255, 1) !important;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+.form-control:hover,
+.form-control:focus {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.form-control:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+textarea.form-control {
+  height: inherit !important;
+}
+
+.signup__btn {
+  cursor: pointer;
+  box-shadow: none !important;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.signup__btn:hover,
+.signup__btn:active,
+.signup__btn:focus {
+  outline: none;
+}
+
+.signup__btn:hover {
+  background: wheat;
+  border: 1px solid wheat;
+  color: black !important;
+}
+
+.auth {
+  border: 2px solid rgb(240, 227, 204);
+  width: 350px;
+  height: 450px;
+  margin: 0 auto;
+  border-radius: 5%;
 }
