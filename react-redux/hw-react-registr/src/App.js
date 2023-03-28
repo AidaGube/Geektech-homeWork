@@ -59,14 +59,14 @@ function App() {
       <div className='container'>
         <div className='auth'>
           <h2 className='auth__title'>Авторизация</h2>
-          <form className="welcome__form">
-            <input type="text" value={username} onChange={handleUsername} className="form-control" />
-            <input type="text" value={password} onChange={handlePassword} className="form-control" />
+          <div className="welcome__form">
+            <input type="text" value={username} onChange={handleUsername} className="form-control"/>
+            <input type="text" value={password} onChange={handlePassword} className="form-control"/>
             <button onClick={login} className="signup__btn form-control" >Войти</button>
             <div>
               {isError && <span>Неверный логин или пароль</span>}
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

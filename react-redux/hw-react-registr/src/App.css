@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-  height: 100vh;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,6 +24,10 @@
   color: white;
 }
 
+.App-link {
+  color: #61dafb;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -32,7 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
 .container {
   max-width: 1280px;
   height: 100vh;
@@ -58,7 +61,7 @@ h2 {
   background: transparent;
   border: none;
   height: 50px;
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, 1) ;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 40px;
@@ -77,12 +80,12 @@ h2 {
   border-color: rgba(255, 255, 255, 0.4);
 }
 textarea.form-control {
-  height: inherit !important;
+  height: inherit ;
 }
 
 .signup__btn {
   cursor: pointer;
-  box-shadow: none !important;
+  box-shadow: none ;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -95,7 +98,7 @@ textarea.form-control {
 .signup__btn:hover {
   background: wheat;
   border: 1px solid wheat;
-  color: black !important;
+  color: black ;
 }
 
 .auth {
