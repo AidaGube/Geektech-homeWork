@@ -1,7 +1,7 @@
 // Задание-1
 // var person = prompt('Введите ваше ФИО:');
 // var password = prompt('Введите пароль:');
-// if (password === 'yes') {
+// if (password === 'ye') {
 //     alert('Здравствуйте ' + person + ' доступ разрешен!');
 // } else {
 //     alert('Вход запрещен!');
