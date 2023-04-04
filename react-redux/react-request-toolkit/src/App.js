@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { userActions } from 'store/slices/userSlice';
 import { useEffect } from 'react';
 import { postFetch, postFetchV2 } from './store/slices/postSlice';
-import { deletePost } from 'store/slices/deletePost';
+import { deletePost } from 'store/slices/deleteSlice';
 import { patchPost } from 'store/slices/patchSlice';
 
 
