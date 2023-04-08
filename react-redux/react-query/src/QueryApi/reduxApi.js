@@ -7,7 +7,7 @@ export const api = createApi({
   }),
   endpoints: (builder) => ({
     getTodos: builder.query({
-      query: () => '/posts/1',
+      query: () => '/posts',
     }),
   }),
 });
