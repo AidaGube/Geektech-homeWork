@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { api } from './QueryApi/reduxApi';
+import { ApiProvider } from '@reduxjs/toolkit/query';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <ApiProvider api={api}>
     <App />
-  </React.StrictMode>
+  </ApiProvider>
 );
