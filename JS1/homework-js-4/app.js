@@ -58,12 +58,14 @@ console.log(sorttag);
 // console.log(getMax2([1, 2, 3, 6,3,4,5,6,4,9,100]))
 
 
-// var arr = [1, 2, 3, 4, 5, 6]
-// for (var i = 0; i < arr.length; i++) {
-//     console.log(arr[i]) //arr[0] потом прибавится один arr[1]
-// }
+var arr = [1, 2, 3, 4, 5, 6]
+for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]) //arr[0] потом прибавится один arr[1]
+}
 
 // let i = 0;
 // while (++i < 5) {
 //     console.log(i)
 // }
+
+
