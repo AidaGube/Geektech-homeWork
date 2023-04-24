@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.links{
+  list-style-type: none;
+  display: flex;
+}
+.links li {
+  margin-right: 25px;
+}
