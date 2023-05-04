@@ -13,6 +13,7 @@ api.interceptors.request.use((config) => { //интерцептор когда �
     return config
 })
 
+
 api.interceptors.response.use( //интерцептор когда успешно проходит наш запрос
     (response) => {
         return response
